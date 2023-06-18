@@ -1,0 +1,18 @@
+name: Get CI Information
+on:
+  push:
+    branches: 
+      - master
+      - feature/*
+jobs:
+  info:
+    runs-on: windows-latest
+    env:
+      name: "Mirza Ghulam Rasyid"
+      email: "ghulamcyber@hotmail.com"
+    steps:
+      - name: Print all env variables
+        run: echo "${{toJSON(env)}}"
+      - name: Print github context
+        run: echo "${{toJSON(github)}}"
+  
