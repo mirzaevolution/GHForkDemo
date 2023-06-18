@@ -9,6 +9,10 @@ jobs:
     steps:
       - name: Print greeting
         run: echo "Hello world!"
+      - name: Print date and time
+        run : |
+              date "+%D"
+              date "+%T"
       - name: Print goodbye
         run: echo "Done - Good bye!"
         
