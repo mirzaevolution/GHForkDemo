@@ -6,13 +6,13 @@ on:
       - feature/*
 jobs:
   info:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     env:
       name: "Mirza Ghulam Rasyid"
       email: "ghulamcyber@hotmail.com"
     steps:
       - name: Print all env variables
-        run: echo "${{toJSON(env)}}"
+        run: echo "${{ toJSON(env) }}"
       - name: Print github context
-        run: echo "${{toJSON(github)}}"
+        run: echo "${{ toJSON(github) }}"
   
