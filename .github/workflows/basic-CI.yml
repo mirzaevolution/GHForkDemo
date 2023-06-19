@@ -37,7 +37,7 @@ jobs:
       with:
         dotnet-version: 7.0.x
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore /GHForkDemo/*.csproj
     - name: Publish
-      run: dotnet publish -o output/publish --no-restore 
+      run: dotnet publish /GHForkDemo/*.csproj -o output/publish --no-restore 
     
