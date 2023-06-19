@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GHForkDemo", "GHForkDemo\GHForkDemo.csproj", "{D11D8FCD-49C4-4E11-B303-D5509B557C93}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GHForkDemo", "GHForkDemo\GHForkDemo.csproj", "{D11D8FCD-49C4-4E11-B303-D5509B557C93}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GHForkDemo.Test", "GHForkDemo.Test\GHForkDemo.Test.csproj", "{D24A74AC-96F6-429D-AB57-2034E8B84154}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GHForkDemo.Shared", "GHForkDemo.Shared\GHForkDemo.Shared.csproj", "{C40532F7-206E-4D19-852B-7A3219C74BAF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{D11D8FCD-49C4-4E11-B303-D5509B557C93}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D11D8FCD-49C4-4E11-B303-D5509B557C93}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D11D8FCD-49C4-4E11-B303-D5509B557C93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D24A74AC-96F6-429D-AB57-2034E8B84154}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D24A74AC-96F6-429D-AB57-2034E8B84154}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D24A74AC-96F6-429D-AB57-2034E8B84154}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D24A74AC-96F6-429D-AB57-2034E8B84154}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C40532F7-206E-4D19-852B-7A3219C74BAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C40532F7-206E-4D19-852B-7A3219C74BAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C40532F7-206E-4D19-852B-7A3219C74BAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C40532F7-206E-4D19-852B-7A3219C74BAF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

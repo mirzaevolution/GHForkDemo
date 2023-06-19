@@ -1,7 +1,7 @@
 ﻿using GHForkDemo.Models;
+using GHForkDemo.Shared.Models.Home;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-
 namespace GHForkDemo.Controllers
 {
     public class HomeController : Controller
@@ -13,9 +13,12 @@ namespace GHForkDemo.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string name = "Index")
         {
-            return View();
+            return View(new IndexModel
+            {
+                Name = name
+            });
         }
 
         public IActionResult Privacy()

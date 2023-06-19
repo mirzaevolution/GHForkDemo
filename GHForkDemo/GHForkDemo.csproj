@@ -6,4 +6,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\GHForkDemo.Shared\GHForkDemo.Shared.csproj" />
+  </ItemGroup>
+
 </Project>
