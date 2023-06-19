@@ -39,5 +39,5 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Publish
-      run: dotnet publish output/publish --no-restore 
+      run: dotnet publish -o output/publish --no-restore 
     
