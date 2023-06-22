@@ -6,7 +6,7 @@ name: Basic .NET CI
 on:
   push:
     branches: [ "master" ]
-    paths-ignore: [ docs ]
+    paths-ignore: [ "docs" ]
   pull_request:
     types: [opened]
   workflow_dispatch:
