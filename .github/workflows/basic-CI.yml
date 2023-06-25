@@ -23,13 +23,14 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
+        cache: true
         dotnet-version: 7.0.x
     - name: Restore dependencies
       run: dotnet restore
     - name: Test
       id: Test
       run: |
-        dynamic="$(dotnet test --no-restore --verbosity normal)"
+        dynamic=$(dotnet test --no-restore --verbosity normal)
         echo "$dynamic" >> "$GITHUB_OUTPUT"
   
   build:
@@ -45,6 +46,7 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
+        cache: true
         dotnet-version: 7.0.x
     - name: Restore dependencies
       run: dotnet restore GHForkDemo/GHForkDemo.csproj
