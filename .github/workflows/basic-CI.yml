@@ -49,6 +49,7 @@ jobs:
       with:
         dotnet-version: 7.0.x
         cache: true
+        cache-dependency-path: GHForkDemo/
     - name: Restore dependencies
       run: dotnet restore GHForkDemo/GHForkDemo.csproj
     - name: Publish
