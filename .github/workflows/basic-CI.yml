@@ -29,9 +29,9 @@ jobs:
     - name: Test
       id: Test
       run: |
-        dynamic=$(dotnet test --no-restore)
-        echo "$dynamic"
-        echo "dynamic=$dynamic" >> $GITHUB_OUTPUT
+        result=$(dotnet test --no-restore)
+        echo "$result"
+        echo "dynamic=$result" >> "$GITHUB_OUTPUT"
   
   build:
     needs: [test]
