@@ -20,19 +20,12 @@ jobs:
       dynamic: ${{ steps.Test.outputs.dynamic }}
     steps:
     - uses: actions/checkout@v3
-    - uses: actions/cache@v3
-      with:
-        path: /usr/share/dotnet
-        # Look to see if there is a cache hit for the corresponding requirements file
-        key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-nuget
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 7.0.x
     - name: Restore dependencies
-      run: dotnet restore --locked-mode
+      run: dotnet restore
     - name: Test
       id: Test
       run: |
@@ -44,13 +37,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/cache@v3
-      with:
-        path: /usr/share/dotnet
-        # Look to see if there is a cache hit for the corresponding requirements file
-        key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-nuget
     - name: Read test outputs #1
       run: echo "${{ needs.test.outputs.static }}"
     - name: Read test outputs #2
@@ -61,7 +47,7 @@ jobs:
       with:
         dotnet-version: 7.0.x
     - name: Restore dependencies
-      run: dotnet restore GHForkDemo/GHForkDemo.csproj --locked-mode
+      run: dotnet restore GHForkDemo/GHForkDemo.csproj
     - name: Publish
       run: dotnet publish GHForkDemo/GHForkDemo.csproj -o output/publish --no-restore 
     - name: Upload a Build Artifact
