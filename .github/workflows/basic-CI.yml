@@ -15,7 +15,9 @@ jobs:
   test:
 
     runs-on: ubuntu-latest
-
+    outputs:
+      static: 'hello world'
+      dynamic: ${{ steps.Test.outputs.dynamic }}
     steps:
     - uses: actions/checkout@v3
     - name: Setup .NET
@@ -25,13 +27,20 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Test
-      run: dotnet test --no-restore --verbosity normal
+      id: Test
+      run: |
+        dynamic=(dotnet test --no-restore --verbosity normal)
+        echo "$dynamic" >> "$GITHUB_OUTPUT"
   
   build:
     needs: [test]
     runs-on: ubuntu-latest
 
     steps:
+    - name: Read test outputs #1
+      run: echo "${{ needs.test.outputs.static }}"
+    - name: Read test outputs #2
+      run: echo "${{ needs.test.outputs.dynamic }}"  
     - uses: actions/checkout@v3
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
