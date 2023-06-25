@@ -31,7 +31,7 @@ jobs:
       run: |
         result=$(dotnet test --no-restore)
         echo "$result"
-        echo "dynamic=$result" >> "$GITHUB_OUTPUT"
+        echo "dynamic=hello" >> "$GITHUB_OUTPUT"
   
   build:
     needs: [test]
