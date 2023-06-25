@@ -27,7 +27,7 @@ jobs:
         cache: true
         cache-dependency-path: GHForkDemo/
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore --locked-mode
     - name: Test
       id: Test
       run: |
@@ -51,7 +51,7 @@ jobs:
         cache: true
         cache-dependency-path: GHForkDemo/
     - name: Restore dependencies
-      run: dotnet restore GHForkDemo/GHForkDemo.csproj
+      run: dotnet restore GHForkDemo/GHForkDemo.csproj --locked-mode
     - name: Publish
       run: dotnet publish GHForkDemo/GHForkDemo.csproj -o output/publish --no-restore 
     - name: Upload a Build Artifact
