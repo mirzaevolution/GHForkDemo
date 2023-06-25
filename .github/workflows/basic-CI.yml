@@ -23,7 +23,6 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
-        cache: true
         dotnet-version: 7.0.x
     - name: Restore dependencies
       run: dotnet restore
@@ -46,7 +45,6 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
-        cache: true
         dotnet-version: 7.0.x
     - name: Restore dependencies
       run: dotnet restore GHForkDemo/GHForkDemo.csproj
