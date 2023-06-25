@@ -22,7 +22,7 @@ jobs:
     - uses: actions/checkout@v3
     - uses: actions/cache@v3
       with:
-        path: ~/.nuget/packages
+        path: /usr/share/dotnet
         # Look to see if there is a cache hit for the corresponding requirements file
         key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
         restore-keys: |
@@ -46,7 +46,7 @@ jobs:
     steps:
     - uses: actions/cache@v3
       with:
-        path: ~/.nuget/packages
+        path: /usr/share/dotnet
         # Look to see if there is a cache hit for the corresponding requirements file
         key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
         restore-keys: |
