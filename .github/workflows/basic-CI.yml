@@ -42,8 +42,8 @@ jobs:
       run: echo "${{ needs.test.outputs.dynamic }}"  
     - name: Read secrets.APPSECRET
       run: echo "${{ secrets.APPSECRET }}"
-    - name: Read env.APPENV
-      run: echo "${{ env.APPENV }}"
+    - name: Read vars.APPENV
+      run: echo "${{ vars.APPENV }}"
     - uses: actions/checkout@v3
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
