@@ -6,8 +6,6 @@ on:
   push:
     branches: [ "master" ]
     paths-ignore: [ "docs/*" ]
-  pull_request:
-    types: [opened]
   workflow_dispatch:
 
 jobs:
@@ -34,6 +32,7 @@ jobs:
   build:
     needs: [test]
     runs-on: ubuntu-latest
+    
     environment: 
       name: dev
     steps:
@@ -44,7 +43,7 @@ jobs:
     - name: Read secrets.APPSECRET
       run: echo "${{ secrets.APPSECRET }}"
     - name: Read env.APPENV
-      run: echo "${{env.APPENV}}"
+      run: echo "${{ env.APPENV }}"
     - uses: actions/checkout@v3
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
