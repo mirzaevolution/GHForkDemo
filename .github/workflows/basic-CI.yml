@@ -2,7 +2,6 @@
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
 
 name: Basic .NET CI
-
 on:
   push:
     branches: [ "master" ]
@@ -38,10 +37,14 @@ jobs:
     environment: 
       name: dev
     steps:
-    - name: Read test outputs #1
+    - name: Read test outputs 'static'
       run: echo "${{ needs.test.outputs.static }}"
-    - name: Read test outputs #2
+    - name: Read test outputs 'dynamic
       run: echo "${{ needs.test.outputs.dynamic }}"  
+    - name: Read secrets.APPSECRET
+      run: echo "${{ secrets.APPSECRET }}"
+    - name: Read env.APPENV
+      run: echo "${{env.APPENV}}"
     - uses: actions/checkout@v3
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
